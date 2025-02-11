@@ -3,7 +3,8 @@
 from odoo import models, fields, api
 
 class ArgentinianReportCustomHandler(models.AbstractModel):
-    _name = 'l10n_ar.tax.report.handler'
+    _inherit = 'l10n_ar.tax.report.handler'
+    
     @api.model
     def _vat_book_get_lines_domain(self, options):
         company_ids = self.env.companies.ids
